@@ -23,6 +23,7 @@ let posts = [];
 app.get("/", function (req, res) {
   res.render("home", {
     homeStartingContent: homeStartingContent,
+    posts: posts,
   });
 });
 
@@ -46,7 +47,7 @@ app.get("/compose", function (req, res) {
 app.post("/compose", function (req, res) {
   const postObj = { title: req.body.title, story: req.body.story };
   posts.push(postObj);
-  console.log(posts);
+
   res.redirect("/");
 });
 

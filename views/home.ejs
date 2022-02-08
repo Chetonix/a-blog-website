@@ -2,8 +2,12 @@
 
 <p><%= homeStartingContent %></p>
 <h1>Home</h1>
-<% for (let post of posts) { %>
+<!-- <% for (let post of posts) { %>
 <h2><%= post.title %></h2>
 <p><%= post.story %></p>
-<% } %> 
+<% } %>  -->
+<% posts.forEach(function(post) { %>
+<h1><%= post.title %></h2>
+<p><%= post.story %></p>
+<% }); %> 
 <%- include("./partials/footer") -%>
